@@ -1,11 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+import { useCanvas } from "@/composables/useCanvas";
+
+const canvasRef = ref<HTMLCanvasElement | null>(null);
+
+useCanvas(canvasRef);
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <canvas ref="canvasRef" class="block h-screen w-screen border-4 border-indigo-500"></canvas>
 </template>
-
-<style scoped></style>
